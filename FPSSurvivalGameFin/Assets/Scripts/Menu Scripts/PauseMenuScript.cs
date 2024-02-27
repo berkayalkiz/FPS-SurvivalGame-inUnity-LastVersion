@@ -15,6 +15,9 @@ public class PauseMenuScript : MonoBehaviour
 
     public static bool upgradeMenuIsActive;
 
+    private PlayerStats player_Stats;
+
+    public GameObject player;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -55,6 +58,7 @@ public class PauseMenuScript : MonoBehaviour
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        player.GetComponent<PlayerStats>().Display_HealthStats(player.GetComponent<HealthScript>().health, player.GetComponent<HealthScript>().totalHealth);
 
     }
 
@@ -76,6 +80,11 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuIsActive = false;
         upgradeMenuIsActive = true;
 
+    }
+
+    public void AddCoin()
+    {
+        PlayerCoinHandler.coin += 1000;
     }
 
     public void BackToMainMenu()

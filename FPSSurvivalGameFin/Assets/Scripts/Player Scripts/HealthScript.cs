@@ -9,6 +9,7 @@ public class HealthScript : MonoBehaviour {
     private NavMeshAgent navAgent;
     private EnemyController enemy_Controller;
 
+    public float totalHealth = 100f;
     public float health = 100f;
 
     public bool is_Player, is_Boar, is_Cannibal;
@@ -50,7 +51,7 @@ public class HealthScript : MonoBehaviour {
 
         if(is_Player) {
             // show the stats(display the health UI value)
-            player_Stats.Display_HealthStats(health);
+            player_Stats.Display_HealthStats(health,totalHealth);
         }
 
         if(is_Boar || is_Cannibal) {

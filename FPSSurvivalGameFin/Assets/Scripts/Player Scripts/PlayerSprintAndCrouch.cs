@@ -6,7 +6,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
 
     private PlayerMovement playerMovement;
 
-    public float sprint_Speed = 10f;
+    public float sprint_Speed = 4f;
     public float move_Speed = 5f;
     public float crouch_Speed = 2f;
 
@@ -31,6 +31,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
     public float sprint_Value = 100f;
     public float sprint_Treshold = 10f;
     public float sprint_Treshold_Coef = 1f;
+    public float sprintUpgCoef = 0f;
 
 	void Awake () {
 
@@ -62,7 +63,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && !is_Crouching) {
 
-                playerMovement.speed = sprint_Speed;
+                playerMovement.speed = move_Speed + sprint_Speed + sprintUpgCoef;
 
                 player_Footsteps.step_Distance = sprint_Step_Distance;
                 player_Footsteps.volume_Min = sprint_Volume;

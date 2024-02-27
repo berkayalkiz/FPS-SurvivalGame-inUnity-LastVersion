@@ -57,7 +57,7 @@ public class UpgradeMenuScript : MonoBehaviour
             notice.SetActive(false);
             healthLv ++;
             healthTextbox.text = healthLv.ToString();
-            player.GetComponent<HealthScript>().health += 5;
+            player.GetComponent<HealthScript>().totalHealth += 5;
             PlayerCoinHandler.coin -= 15;
             coinCounter.text = PlayerCoinHandler.coin.ToString();
         }
@@ -110,7 +110,7 @@ public class UpgradeMenuScript : MonoBehaviour
             notice.SetActive(false);
             sprintLv++;
             sprintTextbox.text = sprintLv.ToString();
-            player.GetComponent<PlayerSprintAndCrouch>().sprint_Speed++;
+            player.GetComponent<PlayerSprintAndCrouch>().sprintUpgCoef++;
             PlayerCoinHandler.coin -= 15;
             coinCounter.text = PlayerCoinHandler.coin.ToString();
         }

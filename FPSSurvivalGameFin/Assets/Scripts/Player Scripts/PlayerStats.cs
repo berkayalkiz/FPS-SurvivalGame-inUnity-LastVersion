@@ -8,9 +8,9 @@ public class PlayerStats : MonoBehaviour {
     [SerializeField]
     private Image health_Stats, stamina_Stats;
 
-    public void Display_HealthStats(float healthValue) {
+    public void Display_HealthStats(float healthValue, float totalHealthValue) {
 
-        healthValue /= 100f;
+        healthValue /= totalHealthValue;
 
         health_Stats.fillAmount = healthValue;
 
